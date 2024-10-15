@@ -84,9 +84,6 @@
 
             } */
 
-
-
-
             // USING FETCH
             function getFactFetch(){
 
@@ -109,6 +106,24 @@
                     .catch(err => console.log(err));
 
                 }
+
+                /* 
+                
+                Fetch() returns a Promise, a response object. 
+                
+                The Promise contains information about the HTTP response, like the status, headers, and the body.
+
+                .text() method is used to extract the body of the response as plain text. 
+
+                .then() returns another Promise, which resolves with the text data (the fact about the number).
+
+                The text returned from the Numbers API is passed to next then() block as data.
+
+                .catch() is used to catch any errors that occur during the fetch operation, such as network failures or if the API endpoint is unreachable.
+
+                err: If an error occurs, it gets passed to the catch() block, and the error message is logged to the console using console.log(err).
+                
+                */
 
         </script>
     </body>
