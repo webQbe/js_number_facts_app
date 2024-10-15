@@ -55,8 +55,25 @@
               // GET VALUE FROM INPUT
               let number = numberInput.value;
 
-              // TEST
-              console.log(number);
+              // MAKE A REQUEST TO API
+              let xhr = new XMLHttpRequest();
+              xhr.open('GET', 'http://numbersapi.com/' + number);
+
+              // AFTER GETTING RESPONSE
+              xhr.onload = function(){
+
+                // status 200 = OK
+                if(this.status == 200){
+
+                    // TEST
+                    console.log(this.responseText);
+
+                }
+
+              }
+
+              // SEND REQUEST TO API
+              xhr.send();
 
             }
 
