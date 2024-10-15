@@ -47,7 +47,10 @@
             let numberInput = document.querySelector('#numberInput');
 
             // ADD EVENT LISTENER
-            numberInput.addEventListener('input', getFactAjax);
+            numberInput.addEventListener('input', getFactFetch);
+
+
+/*          USING AJAX
 
             // CREATE FUNCTION
             function getFactAjax(){
@@ -79,8 +82,26 @@
               // SEND REQUEST TO API
               xhr.send();
 
-            }
+            } */
 
+
+
+
+            // USING FETCH
+            function getFactFetch(){
+
+                let number = numberInput.value;
+
+                // MAKE A REQUEST TO API
+                // this reuturns a PROMISE
+                fetch('http://numbersapi.com/' + number)
+                    .then(response => response.text())
+                    .then(data => {
+                        console.log(data);
+                    })
+                    .catch(err => console.log(err));
+
+                }
 
         </script>
     </body>
